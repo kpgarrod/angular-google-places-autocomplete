@@ -6,9 +6,11 @@
  * https://github.com/kuhnza/angular-google-places-autocomplete/blob/master/LICENSE
  */
 
- 'use strict';
 
-angular.module('google.places', [])
+ (function () {
+ 	'use strict';
+
+ 		var googlePlaces = angular.module('google.places', [])
   /**
    * DI wrapper around global google places library.
    *
@@ -459,3 +461,7 @@ angular.module('google.places', [])
             return (condition) ? input + ',' : input;
         };
     }]);
+    if (typeof module !== 'undefined' && module && module.exports) {
+  		module.exports = 'googlePlaces';
+  	}
+  })();
